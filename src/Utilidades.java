@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public class Utilidades {
-	// 1) SomatÛrio
+	// 1) Somat√≥rio
 	public static int somatorio(int[] vetor) {
 		int sum = 0;
 		for (int i = 2; i < vetor.length - 2; i++) {
@@ -10,7 +10,7 @@ public class Utilidades {
 		return sum;
 	}
 
-	// 2) N˙meros pares
+	// 2) N√∫meros pares
 	public static void numerosPares(int inicio, int fim) {
 		for (int i = inicio; i <= fim; i++) {
 			if (i % 2 == 0) {
@@ -20,17 +20,17 @@ public class Utilidades {
 		System.out.println();
 	}
 
-	// 3) MÈdia
+	// 3) M√©dia
 	public static double media(int[] vetor1, int[] vetor2) {
 		double sum = Arrays.stream(vetor1).sum() + Arrays.stream(vetor2).sum();
 		int totalElements = vetor1.length + vetor2.length;
 		return sum / totalElements;
 	}
 
-	// 4) MÈdia ponderada
+	// 4) M√©dia ponderada
 	public static double mediaPonderada(int[] notas, int[] pesos) {
 		if (notas.length != pesos.length) {
-			throw new IllegalArgumentException("Os vetores de notas e pesos devem ter o mesmo tamanho.");
+			System.out.println("Os vetores de notas e pesos devem ter o mesmo tamanho.");
 		}
 
 		double somaProdutos = 0;
@@ -60,19 +60,19 @@ public class Utilidades {
 		return count;
 	}
 
-	// 6) CÛpia de vetor
+	// 6) C√≥pia de vetor
 	public static int[] copiaVetor(int[] vetor) {
 		return Arrays.copyOf(vetor, vetor.length);
 	}
 
-	// 7) OrdenaÁ„o crescente
+	// 7) Ordena√ß√£o crescente
 	public static int[] ordenacaoCrescente(int[] vetor) {
 		int[] copia = copiaVetor(vetor);
 		Arrays.sort(copia);
 		return copia;
 	}
 
-	// 8) VerificaÁ„o de ordenaÁ„o
+	// 8) Verifica√ß√£o de ordena√ß√£o
 	public static boolean estaOrdenado(int[] vetor) {
 		for (int i = 0; i < vetor.length - 1; i++) {
 			if (vetor[i] > vetor[i + 1]) {
@@ -82,32 +82,32 @@ public class Utilidades {
 		return true;
 	}
 
-	// 9) K-Èsimo maior valor
+	// 9) K-√©simo maior valor
 	public static int kEsimoMaior(int[] vetor, int k) {
 		if (k <= 0 || k > vetor.length) {
-			throw new IllegalArgumentException("K est· fora do intervalo v·lido.");
+			System.out.println("K est√° fora do intervalo v√°lido.");
 		}
 
 		int[] copia = ordenacaoCrescente(vetor);
 		return copia[vetor.length - k];
 	}
 
-	// 10) K-Èsimo menor valor
+	// 10) K-√©simo menor valor
 	public static int kEsimoMenor(int[] vetor, int k) {
 		if (k <= 0 || k > vetor.length) {
-			throw new IllegalArgumentException("K est· fora do intervalo v·lido.");
+			System.out.println("K est√° fora do intervalo v√°lido.");
 		}
 
 		int[] copia = ordenacaoCrescente(vetor);
 		return copia[k - 1];
 	}
 
-	// 11) VerificaÁ„o de igualdade
+	// 11) Verifica√ß√£o de igualdade
 	public static boolean saoIguais(int[] vetor1, int[] vetor2) {
 		return Arrays.equals(vetor1, vetor2);
 	}
 
-	// 12) PotenciaÁ„o
+	// 12) Potencia√ß√£o
 	public static double potenciacao(double base, double expoente) {
 		return Math.pow(base, expoente);
 	}
@@ -131,38 +131,38 @@ public class Utilidades {
 		return true;
 	}
 
-	// 14) Busca por ocorrÍncias
+	// 14) Busca por ocorr√™ncias
 	public static int[] buscaOcorrencias(int[] vetor1, int[] vetor2) {
 		return Arrays.stream(vetor1).distinct().filter(x -> Arrays.stream(vetor2).anyMatch(y -> y == x)).toArray();
 	}
 
-	// 15) RemoÁ„o de elemento do vetor
+	// 15) Remo√ß√£o de elemento do vetor
 	public static int[] removerElemento(int[] vetor, int elemento) {
 		return Arrays.stream(vetor).filter(x -> x != elemento).toArray();
 	}
 
-	// 16) VerificaÁ„o de palÌndromo
+	// 16) Verifica√ß√£o de pal√≠ndromo
 	public static boolean ehPalindromo(String texto) {
 		String textoInvertido = new StringBuilder(texto).reverse().toString();
 		return texto.equals(textoInvertido);
 	}
 
-	// 17) VerificaÁ„o de n˙mero primo
+	// 17) Verifica√ß√£o de n√∫mero primo
 	public static boolean ehNumeroPrimo(int numero) {
 		return ehPrimo(numero);
 	}
 
-	// 18) Invers„o de string
+	// 18) Invers√£o de string
 	public static String inverterString(String texto) {
 		return new StringBuilder(texto).reverse().toString();
 	}
 
-	// 19) C·lculo de juros compostos
+	// 19) C√°lculo de juros compostos
 	public static double calcularJurosCompostos(double valorInicial, double taxaDeJuros, int numPeriodos) {
 		return valorInicial * Math.pow(1 + taxaDeJuros, numPeriodos);
 	}
 
-	// 20) VerificaÁ„o de n˙mero perfeito
+	// 20) Verifica√ß√£o de n√∫mero perfeito
 	public static boolean ehNumeroPerfeito(int numero) {
 		int somaDivisores = 1;
 		for (int i = 2; i * i <= numero; i++) {
@@ -176,7 +176,7 @@ public class Utilidades {
 		return somaDivisores == numero;
 	}
 
-	// 21) DiminuiÁ„o do vetor
+	// 21) Diminui√ß√£o do vetor
 	public static void diminuicaoDoVetor(int tamanho) {
 		for (int i = tamanho; i >= 1; i--) {
 			int[] vetor = new int[i];
@@ -185,7 +185,7 @@ public class Utilidades {
 	}
 
 	// 22) Imprimir elementos:
-	// Item 22a - Imprimir padr„o "a"
+	// Item 22a - Imprimir padr√£o "a"
     public static void imprimirPadraoA(int linhas) {
         for (int i = 0; i < linhas; i++) {
             for (int j = 0; j <= i; j++) {
@@ -195,7 +195,7 @@ public class Utilidades {
         }
     }
 
-    // Item 22b - Imprimir padr„o "b"
+    // Item 22b - Imprimir padr√£o "b"
     public static void imprimirPadraoB(int linhas) {
         for (int i = 0; i < linhas; i++) {
             for (int j = 0; j < linhas; j++) {
